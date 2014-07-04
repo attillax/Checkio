@@ -1,21 +1,10 @@
-#Your optional code here
-#You can import some modules or create additional functions
-
-
+# -*- coding: utf-8 -*-
 def checkio(data):
-    #Your code here
-    #It's main function. Don't remove this function
-    #It's used for auto-testing and must return a result for check.  
-
-    #replace this for solution
-    return data
-
-#Some hints
-#You can use list.count(element) method for counting.
-#Create new list with non-unique elements
-#or remove elements from original list (but it's bad practice for many real cases)
-#Loop over original list
-
+    res = []
+    for i in range(len(data)):
+        if data.count(data[i]) > 1:
+            res.append(data[i])
+    return res
 
 if __name__ == "__main__":
     #These "asserts" using only for self-checking and not necessary for auto-testing
