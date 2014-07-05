@@ -1,23 +1,9 @@
-def swap(arr, i, j):
-    arr[i], arr[j] = arr[j], arr[i]
- 
-def bubble_sort(arr):
-    i = len(arr)
-    while i > 1:
-       for j in range(i - 1):
-           if arr[j] > arr[j + 1]:
-               swap(arr, j, j + 1)
-       i -= 1
-    return arr
-
 def checkio(data):
-    copy = bubble_sort(data)
-    if len(copy) % 2 == 1:
-        middle = len(copy) / 2
-        median = copy[middle]
+    copy = sorted(data)
+    if len(data) % 2 == 1:
+        median = copy[len(data) / 2]
     else :
-        middle = len(copy) / 2
-        median = (copy[middle] + copy[middle - 1]) / 2.0
+        median = (copy[len(data) / 2] + copy[len(data) / 2 - 1]) / 2.0
     return median
 
 '''#These "asserts" using only for self-checking and not necessary for auto-testing
