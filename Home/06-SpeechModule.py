@@ -6,9 +6,29 @@ OTHER_TENS = ["twenty", "thirty", "forty", "fifty", "sixty", "seventy",
               "eighty", "ninety"]
 HUNDRED = "hundred"
 
-
 def checkio(number):
-
+    temp = number
+    res = ''
+    #check if 1XX - 9XX
+    if temp >= 100: 
+        if (temp/100 > 0) and (temp/100 < 10):
+            res += FIRST_TEN[temp/100-1]+' '
+        res += HUNDRED
+        temp = temp%100
+        if temp > 0:
+            res += ' '
+    #check if 2X-9X
+    if (temp <= 99) and (temp >= 20):
+        res += OTHER_TENS[(temp-20)/10]
+        temp = temp%10
+        if temp > 0:
+            res += ' '
+    #check if 10-19
+    if (temp >= 10 ) and (temp < 20):
+        res += SECOND_TEN[temp-10]
+    #check if 1-9
+    if (temp <= 9) and (temp != 0):
+        res += FIRST_TEN[temp-1]
     return res
 
 '''if __name__ == '__main__':
