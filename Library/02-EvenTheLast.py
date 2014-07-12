@@ -1,8 +1,11 @@
 def checkio(array):
-    """
-        sums even-indexes elements and multiply at the last
-    """
-    return 0
+    res = 0
+    for i in range(len(array)):
+        if i%2 == 0:
+            res += array[i]
+    if len(array):
+        res *= array[len(array)-1]
+    return res
 
 ''' #These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
